@@ -1,0 +1,2 @@
+C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\New folder\obj\x86\Debug\Battleship.csprojAssemblyReference.cache
+C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\New folder\obj\x86\Debug\Battleship.csproj.CoreCompileInputs.cache
