@@ -105,24 +105,26 @@ public class AIHardPlayer : AIPlayer
 	/// <param name="column">the column that will be shot at</param>
 	protected override void GenerateCoords(ref int row, ref int column)
 	{
-		do {
-			_CurrentTarget = null;
+		if (EnemyGrid != null) {
+			do {
+				_CurrentTarget = null;
 
-			//check which state the AI is in and uppon that choose which coordinate generation
-			//method will be used.
-			switch (_CurrentState) {
+				//check which state the AI is in and uppon that choose which coordinate generation
+				//method will be used.
+				switch (_CurrentState) {
 				case AIStates.Searching:
-					SearchCoords(ref row, ref column);
+					SearchCoords (ref row, ref column);
 					break;
 				case AIStates.TargetingShip:
 				case AIStates.HittingShip:
-					TargetCoords(ref row, ref column);
+					TargetCoords (ref row, ref column);
 					break;
 				default:
-					throw new ApplicationException("AI has gone in an invalid state");
-			}
+					throw new ApplicationException ("AI has gone in an invalid state");
+				}
 
-		} while ((row < 0 || column < 0 || row >= EnemyGrid.Height || column >= EnemyGrid.Width || EnemyGrid[row, column] != TileView.Sea));
+			} while ((row < 0 || column < 0 || row >= EnemyGrid.Height || column >= EnemyGrid.Width || EnemyGrid.Item(row, column) != TileView.Sea));
+		}
 		//while inside the grid and not a sea tile do the search
 	}
 
@@ -348,7 +350,7 @@ public class AIHardPlayer : AIPlayer
 	private void AddTarget(int row, int column)
 	{
 
-		if ((row >= 0 && column >= 0 && row < EnemyGrid.Height && column < EnemyGrid.Width && EnemyGrid[row, column] == TileView.Sea)) {
+		if ((row >= 0 && column >= 0 && row < EnemyGrid.Height && column < EnemyGrid.Width && EnemyGrid.Item(row, column) == TileView.Sea)) {
 			_Targets.Push(new Target(new Location(row, column), _CurrentTarget.ShotAt));
 		}
 	}

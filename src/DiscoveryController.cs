@@ -47,7 +47,7 @@ static class DiscoveryController
 		col = Convert.ToInt32(Math.Floor((mouse.X - UtilityFunctions.FIELD_LEFT) / (UtilityFunctions.CELL_WIDTH + UtilityFunctions.CELL_GAP)));
 
 		if (row >= 0 & row < GameController.HumanPlayer.EnemyGrid.Height) {
-			if (col >= 0 & col < GameController.hum.EnemyGrid.Width) {
+			if (col >= 0 & col < GameController.HumanPlayer.EnemyGrid.Width) {
 				GameController.Attack(row, col);
 			}
 		}
