@@ -228,22 +228,13 @@
     <None Include="Resources\SwinGame.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\.DS_Store">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="Resources\highscores.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\animations\.DS_Store">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\animations\splash.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\fonts\ffaccess.ttf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\images\.DS_Store">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\images\deploy.jpg">
@@ -371,6 +362,30 @@
     <None Include="Resources\images\yacht.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="lib\win\jpeg.dll" />
+    <None Include="lib\win\libfreetype-6.dll" />
+    <None Include="lib\win\libogg-0.dll" />
+    <None Include="lib\win\libpng12-0.dll" />
+    <None Include="lib\win\libpng13.dll" />
+    <None Include="lib\win\libtiff-3.dll" />
+    <None Include="lib\win\libvorbis-0.dll" />
+    <None Include="lib\win\libvorbisfile-3.dll" />
+    <None Include="lib\win\mikmod.dll" />
+    <None Include="lib\win\ogg.dll" />
+    <None Include="lib\win\SDL.dll" />
+    <None Include="lib\win\SDL_gfx.dll" />
+    <None Include="lib\win\SDL_image.dll" />
+    <None Include="lib\win\SDL_mixer.dll" />
+    <None Include="lib\win\SDL_net.dll" />
+    <None Include="lib\win\SDL_ttf.dll" />
+    <None Include="lib\win\SGSDK.dll" />
+    <None Include="lib\win\smpeg.dll" />
+    <None Include="lib\win\swingame.rc" />
+    <None Include="lib\win\zlib1.dll" />
+    <None Include="lib\win\_DS_Store" />
+    <None Include="obj\x86\Debug-Windows\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\x86\Debug-Windows\MyGame.csproj.FileListAbsolute.txt" />
+    <None Include="obj\x86\Debug-Windows\MyGame.exe" />
   </ItemGroup>
   <Target Name="CopyFiles">
     <Copy SourceFiles="@(MacLibraryFiles)" DestinationFolder="$(OutDir)" />
