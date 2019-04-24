@@ -25,26 +25,6 @@
       <File FileName="src\Model\AIPlayer.cs" Line="26" Column="16" />
       <File FileName="battleships Status" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="MyGame" expanded="True">
-            <Node name="MyGame" expanded="True">
-              <Node name="References" expanded="True" />
-              <Node name="lib" expanded="True">
-                <Node name="godly" expanded="True" />
-                <Node name="mac" expanded="True" />
-                <Node name="sdl13" expanded="True" />
-                <Node name="win" expanded="True">
-                  <Node name="libpng12-0.dll" selected="True" />
-                </Node>
-              </Node>
-              <Node name="src" expanded="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />
 </Properties>
