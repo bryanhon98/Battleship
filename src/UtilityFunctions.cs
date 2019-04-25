@@ -3,7 +3,7 @@ using Microsoft.VisualBasic;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Data;
+//using System.Data;
 using System.Diagnostics;
 using SwinGameSDK;
 
@@ -124,59 +124,57 @@ static class UtilityFunctions
 		int colLeft = 0;
 
 		//Draw the grid
-		for (int row = 0; row <= 9; row++) {
-			rowTop = top + (cellGap + cellHeight) * row;
-
-			for (int col = 0; col <= 9; col++) {
-				colLeft = left + (cellGap + cellWidth) * col;
-
+		for (int row = 0; (row <= 9); row++) {
+			rowTop = (top
+						+ ((cellGap + cellHeight)
+						* row));
+			for (int col = 0; (col <= 9); col++) {
+				colLeft = (left
+							+ ((cellGap + cellWidth)
+							* col));
 				Color fillColor = default(Color);
 				bool draw = false;
-
 				draw = true;
-
-				switch (grid.Item(row, col)) 
-				{
-					case TileView.Ship:
-						if (small)
-							fillColor = SMALL_SEA;
-						else
-							draw = false;
-						break;
-					//If small Then fillColor = _SMALL_SHIP Else fillColor = _LARGE_SHIP
-					case TileView.Miss:
-						if (small)
-							fillColor = SMALL_MISS;
-						else
-							fillColor = LARGE_MISS;
-						break;
-					case TileView.Hit:
-						if (small)
-							fillColor = SMALL_HIT;
-						else
-							fillColor = LARGE_HIT;
-						break;
-					case TileView.Sea:
-						break;
-				}
-
-				if (draw) {
-					SwinGame.FillRectangle(fillColor, colLeft, rowTop, cellWidth, cellHeight);
-					if (!small) {
-						SwinGame.DrawRectangle(OUTLINE_COLOR, colLeft, rowTop, cellWidth, cellHeight);
+				if (grid.Item (row, col) == TileView.Ship) {
+					draw = false;
+				} else if (grid.Item (row, col) == TileView.Miss) {
+					if (small) {
+						fillColor = SMALL_MISS;
+					} else {
+						fillColor = LARGE_MISS;
+					}
+				} else if (grid.Item (row, col) == TileView.Hit) {
+					if (small) {
+						fillColor = SMALL_HIT;
+					} else {
+						fillColor = LARGE_HIT;
+					}
+				} else if (grid.Item (row, col) == TileView.Sea || grid.Item (row, col) == TileView.Ship) {
+					if (small) {
+						fillColor = SMALL_SEA;
+					} else {
+						draw = false;
 					}
 				}
+				if (draw) {
+					SwinGame.FillRectangle (fillColor, colLeft, rowTop, cellWidth, cellHeight);
+					if (!small) {
+						SwinGame.DrawRectangle (OUTLINE_COLOR, colLeft, rowTop, cellWidth, cellHeight);
+					}
+
+				}
+
 			}
+
 		}
 
 		if (!showShips) {
 			return;
 		}
 
-		int shipHeight = 0;
-		int shipWidth = 0;
-		string shipName = null;
-
+		int shipHeight;
+		int shipWidth;
+		string shipName;
 		//Draw the ships
 		foreach (Ship s in thePlayer) {
 			if (s == null || !s.IsDeployed)

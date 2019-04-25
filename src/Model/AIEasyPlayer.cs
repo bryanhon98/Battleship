@@ -40,8 +40,6 @@ public class AIEasyPlayer : AIPlayer
 	protected override void GenerateCoords(ref int row, ref int column)
 	{
 		do {
-			//check which state the AI is in and uppon that choose which coordinate generation
-			//method will be used.
 			switch (_CurrentState) {
 			case AIStates.Searching:
 				SearchCoords(ref row, ref column);
@@ -50,7 +48,6 @@ public class AIEasyPlayer : AIPlayer
 				throw new ApplicationException("AI has gone in an imvalid state");
 			}
 		} while ((row < 0 || column < 0 || row >= EnemyGrid.Height || column >= EnemyGrid.Width || EnemyGrid.Item(row, column) != TileView.Sea));
-		//while inside the grid and not a sea tile do the search
 	}
 
 	/// <summary>

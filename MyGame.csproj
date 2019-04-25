@@ -1,4 +1,5 @@
-﻿<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug-Windows</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -65,21 +66,15 @@
       </CustomCommands>
     </CustomCommands>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug-Windows|x64'">
-    <PlatformTarget>x64</PlatformTarget>
-    <OutputPath>bin\x64\Debug-Windows\</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug-Mac|x64'">
-    <PlatformTarget>x64</PlatformTarget>
-    <OutputPath>bin\x64\Debug-Mac\</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug-Unix|x64'">
-    <PlatformTarget>x64</PlatformTarget>
-    <OutputPath>bin\x64\Debug-Unix\</OutputPath>
-  </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup />
   <ItemGroup>
+    <Folder Include="src\" />
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\GameMain.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="src\DeploymentController.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
@@ -110,64 +105,30 @@
     <Compile Include="src\UtilityFunctions.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="src\Model\AIHardPlayer.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="src\Model\AIMediumPlayer.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="src\Model\AIOption.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="src\Model\AIPlayer.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="src\Model\AttackResult.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="src\Model\BattleShipsGame.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="src\Model\Direction.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="src\Model\ISeaGrid.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="src\Model\Player.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="src\Model\ResultOfAttack.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="src\Model\SeaGrid.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="src\Model\SeaGridAdapter.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="src\Model\Ship.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="src\Model\ShipName.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="src\Model\Tile.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="src\Model\TileView.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
     <Compile Include="src\Model\AIEasyPlayer.cs" />
+    <Compile Include="src\Model\AIHardPlayer.cs" />
+    <Compile Include="src\Model\AIMediumPlayer.cs" />
+    <Compile Include="src\Model\AIOption.cs" />
+    <Compile Include="src\Model\AIPlayer.cs" />
+    <Compile Include="src\Model\AttackResult.cs" />
+    <Compile Include="src\Model\BattleShipsGame.cs" />
+    <Compile Include="src\Model\Direction.cs" />
+    <Compile Include="src\Model\ISeaGrid.cs" />
+    <Compile Include="src\Model\Player.cs" />
+    <Compile Include="src\Model\ResultOfAttack.cs" />
+    <Compile Include="src\Model\SeaGrid.cs" />
+    <Compile Include="src\Model\SeaGridAdapter.cs" />
+    <Compile Include="src\Model\Ship.cs" />
+    <Compile Include="src\Model\ShipName.cs" />
+    <Compile Include="src\Model\Tile.cs" />
+    <Compile Include="src\Model\TileView.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System" />
     <Reference Include="SwinGame">
       <HintPath>lib\SwinGame.dll</HintPath>
     </Reference>
-    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\animations\startup.txt">
@@ -230,13 +191,126 @@
     <None Include="Resources\SwinGame.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <MacLibraryFiles Include="lib\sdl13\libSGSDK.dylib">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </MacLibraryFiles>
+    <WinLibraryFiles Include="lib\win\jpeg.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </WinLibraryFiles>
+    <WinLibraryFiles Include="lib\win\libfreetype-6.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </WinLibraryFiles>
+    <WinLibraryFiles Include="lib\win\libogg-0.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </WinLibraryFiles>
+    <WinLibraryFiles Include="lib\win\libpng12-0.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </WinLibraryFiles>
+    <WinLibraryFiles Include="lib\win\libpng13.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </WinLibraryFiles>
+    <WinLibraryFiles Include="lib\win\libtiff-3.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </WinLibraryFiles>
+    <WinLibraryFiles Include="lib\win\libvorbis-0.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </WinLibraryFiles>
+    <WinLibraryFiles Include="lib\win\libvorbisfile-3.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </WinLibraryFiles>
+    <WinLibraryFiles Include="lib\win\mikmod.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </WinLibraryFiles>
+    <WinLibraryFiles Include="lib\win\ogg.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </WinLibraryFiles>
+    <WinLibraryFiles Include="lib\win\SDL.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </WinLibraryFiles>
+    <WinLibraryFiles Include="lib\win\SDL_gfx.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </WinLibraryFiles>
+    <WinLibraryFiles Include="lib\win\SDL_image.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </WinLibraryFiles>
+    <WinLibraryFiles Include="lib\win\SDL_mixer.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </WinLibraryFiles>
+    <WinLibraryFiles Include="lib\win\SDL_net.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </WinLibraryFiles>
+    <WinLibraryFiles Include="lib\win\SDL_ttf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </WinLibraryFiles>
+    <WinLibraryFiles Include="lib\win\SGSDK.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </WinLibraryFiles>
+    <WinLibraryFiles Include="lib\win\smpeg.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </WinLibraryFiles>
+    <WinLibraryFiles Include="lib\win\swingame.rc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </WinLibraryFiles>
+    <WinLibraryFiles Include="lib\win\zlib1.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </WinLibraryFiles>
+    <None Include="lib\.DS_Store">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="lib\cygpath">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="lib\SwinGame.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="lib\SwinGame.dll.mdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="lib\godly\.DS_Store">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="lib\godly\libSGSDK.dylib">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="lib\godly\mac\.DS_Store" />
+    <None Include="lib\mac\.DS_Store">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="lib\mac\libSGSDK.dylib">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="lib\sdl13\.DS_Store">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="lib\sdl13\mac\.DS_Store" />
+    <None Include="lib\win\.DS_Store">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\.DS_Store">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\highscores.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\animations\.DS_Store">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\animations\splash.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\fonts\ffaccess.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\images\.DS_Store">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\images\ac.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\images\battleship.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\images\boat.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\images\deploy.jpg">
@@ -255,6 +329,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\images\deploy_randomize_button.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\images\destroyer.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\images\discover.jpg">
@@ -311,6 +388,9 @@
     <None Include="Resources\images\SwinGameAni.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Resources\images\yacht.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\sounds\Battleship.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -335,59 +415,6 @@
     <None Include="Resources\sounds\winner.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="obj\x86\Debug-Mac\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="obj\x86\Debug-Mac\MyGame.csproj.CopyComplete" />
-    <None Include="obj\x86\Debug-Mac\MyGame.csproj.CoreCompileInputs.cache" />
-    <None Include="obj\x86\Debug-Mac\MyGame.csproj.FileListAbsolute.txt" />
-    <None Include="obj\x86\Debug-Mac\MyGame.exe" />
-    <None Include="obj\x86\Debug-Mac\MyGame.pdb" />
-    <None Include="lib\cygpath" />
-    <None Include="lib\SwinGame.dll" />
-    <None Include="lib\SwinGame.dll.mdb" />
-    <None Include="lib\godly\libSGSDK.dylib" />
-    <None Include="lib\godly\mac\.DS_Store" />
-    <None Include="lib\mac\libSGSDK.dylib" />
-    <None Include="lib\sdl13\libSGSDK.dylib" />
-    <None Include="lib\sdl13\mac\.DS_Store" />
-    <None Include="Resources\images\boat.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\images\ac.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\images\battleship.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\images\destroyer.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\images\yacht.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="lib\win\jpeg.dll" />
-    <None Include="lib\win\libfreetype-6.dll" />
-    <None Include="lib\win\libogg-0.dll" />
-    <None Include="lib\win\libpng12-0.dll" />
-    <None Include="lib\win\libpng13.dll" />
-    <None Include="lib\win\libtiff-3.dll" />
-    <None Include="lib\win\libvorbis-0.dll" />
-    <None Include="lib\win\libvorbisfile-3.dll" />
-    <None Include="lib\win\mikmod.dll" />
-    <None Include="lib\win\ogg.dll" />
-    <None Include="lib\win\SDL.dll" />
-    <None Include="lib\win\SDL_gfx.dll" />
-    <None Include="lib\win\SDL_image.dll" />
-    <None Include="lib\win\SDL_mixer.dll" />
-    <None Include="lib\win\SDL_net.dll" />
-    <None Include="lib\win\SDL_ttf.dll" />
-    <None Include="lib\win\SGSDK.dll" />
-    <None Include="lib\win\smpeg.dll" />
-    <None Include="lib\win\swingame.rc" />
-    <None Include="lib\win\zlib1.dll" />
-    <None Include="lib\win\_DS_Store" />
-    <None Include="obj\x86\Debug-Windows\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="obj\x86\Debug-Windows\MyGame.csproj.FileListAbsolute.txt" />
-    <None Include="obj\x86\Debug-Windows\MyGame.exe" />
   </ItemGroup>
   <Target Name="CopyFiles">
     <Copy SourceFiles="@(MacLibraryFiles)" DestinationFolder="$(OutDir)" />
