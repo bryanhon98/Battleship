@@ -306,7 +306,10 @@ public static class GameController
 			case GameState.ViewingHighScores:
 			HighScoreController.HandleHighScoreInput();
 				break;
-		}
+            case GameState.AlteringOption:
+                MenuController.HandleOptionMenuInput();
+                break;
+        }
 
 		UtilityFunctions.UpdateAnimations();
 	}
@@ -343,7 +346,10 @@ public static class GameController
 			case GameState.ViewingHighScores:
 				HighScoreController.DrawHighScores();
 				break;
-		}
+            case GameState.AlteringOption:
+                MenuController.DrawOption();
+                break;
+        }
 
 		UtilityFunctions.DrawAnimations();
 
