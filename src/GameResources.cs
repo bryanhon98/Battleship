@@ -76,6 +76,7 @@ public static class GameResources
 	private static void LoadMusic()
 	{
 		NewMusic("Background", "Battleship.mp3");
+		NewMusic ("Background2", ".mp3");
 	}
 
 	/// <summary>

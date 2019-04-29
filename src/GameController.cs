@@ -28,6 +28,10 @@ public static class GameController
 
 	private static AIPlayer _ai;
 
+	private static string _music = "Background";
+	private static Boolean Musicstate;
+	private static Boolean Music = true;
+
 	private static Stack<GameState> _state = new Stack<GameState>();
 
 	public static Timer HighlightTimer = SwinGame.CreateTimer ();
@@ -50,6 +54,10 @@ public static class GameController
 	/// <returns>the human player</returns>
 	public static Player HumanPlayer {
 		get { return _human; }
+	}
+
+	public static String MusicOption {
+		get { return _music; }
 	}
 
 	/// <summary>
@@ -80,6 +88,7 @@ public static class GameController
 	{
 		if (_theGame != null)
 			EndGame();
+
 
 		//Create the game
 		_theGame = new BattleShipsGame();
@@ -311,6 +320,9 @@ public static class GameController
             case GameState.AlteringOption:
                 MenuController.HandleOptionMenuInput();
                 break;
+			case GameState.ChangingMusic:
+				MenuController.HandleMusicMenuInput ();
+				break;
         }
 
 		UtilityFunctions.UpdateAnimations();
@@ -351,6 +363,9 @@ public static class GameController
             case GameState.AlteringOption:
                 MenuController.DrawOption();
                 break;
+			case GameState.ChangingMusic:
+				MenuController.DrawMusicMenu ();
+				break;
         }
 
 		UtilityFunctions.DrawAnimations();
@@ -396,6 +411,11 @@ public static class GameController
 		_aiSetting = setting;
 	}
 
+	public static void SetMusic (String m)
+	{
+		_music = m;
+		Musicstate = true;
+	}
 }
 
 //=======================================================
