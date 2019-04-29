@@ -30,6 +30,8 @@ public static class GameController
 
 	private static Stack<GameState> _state = new Stack<GameState>();
 
+	public static Timer HighlightTimer = SwinGame.CreateTimer ();
+
 	private static AIOption _aiSetting;
 	/// <summary>
 	/// Returns the current state of the game, indicating which screen is

@@ -214,23 +214,55 @@ static class MenuController
 	/// of the menu, to enable sub menus. The xOffset repositions the menu horizontally
 	/// to allow the submenus to be positioned correctly.
 	/// </remarks>
-	private static void DrawButtons(int menu, int level, int xOffset)
+	private static void DrawButtons (int menu, int level, int xOffset)
 	{
 		int btnTop = 0;
 
 		btnTop = MENU_TOP - (MENU_GAP + BUTTON_HEIGHT) * level;
 		int i = 0;
-		for (i = 0; i <= _menuStructure[menu].Length - 1; i++) {
+		for (i = 0; i <= _menuStructure [menu].Length - 1; i++) {
 			int btnLeft = 0;
 			btnLeft = MENU_LEFT + BUTTON_SEP * (i + xOffset);
 			//SwinGame.FillRectangle(Color.White, btnLeft, btnTop, BUTTON_WIDTH, BUTTON_HEIGHT)
-			SwinGame.DrawTextLines(_menuStructure[menu][i], MENU_COLOR, Color.Black, GameResources.GameFont("Menu"), FontAlignment.AlignCenter, btnLeft + TEXT_OFFSET, btnTop + TEXT_OFFSET, BUTTON_WIDTH, BUTTON_HEIGHT);
+			SwinGame.DrawTextLines (_menuStructure [menu] [i], MENU_COLOR, Color.Black, GameResources.GameFont ("Menu"), FontAlignment.AlignCenter, btnLeft + TEXT_OFFSET, btnTop + TEXT_OFFSET, BUTTON_WIDTH, BUTTON_HEIGHT);
 
-			if (SwinGame.MouseDown(MouseButton.LeftButton) & IsMouseOverMenu(i, level, xOffset)) {
-				SwinGame.DrawRectangle(HIGHLIGHT_COLOR, btnLeft, btnTop, BUTTON_WIDTH, BUTTON_HEIGHT);
+			if (SwinGame.MouseDown (MouseButton.LeftButton) & IsMouseOverMenu (i, level, xOffset)) {
+				SwinGame.DrawRectangle (HIGHLIGHT_COLOR, btnLeft, btnTop, BUTTON_WIDTH, BUTTON_HEIGHT);
+			}
+		}
+
+		for (int a = 0; a < _menuStructure [menu].Length; a++) {
+			string btnText = _menuStructure [menu] [a];
+			int btnLeft = MENU_LEFT + BUTTON_SEP * (a + xOffset);
+			float x = btnLeft + TEXT_OFFSET;
+			float y = btnTop + TEXT_OFFSET;
+			int w = BUTTON_WIDTH;
+			int h = BUTTON_HEIGHT;
+
+			if (GameResources.Muted && a == MAIN_MENU_MUTE_BUTTON) {
+				btnText = "UNMUTED";
+			}
+
+			if (IsMouseOverMenu (a, level, xOffset)) {
+				const int numExpandFrames = 9; // 9 would gives us 0 1 2 3 4 3 2 1 0 (when we're done setting up "expExt") 
+				int expExt = (int)(GameController.HighlightTimer.Ticks / 66) % numExpandFrames; // expansion extent (num of pixels outward from normal size) 
+				if (expExt > numExpandFrames / 2) {
+					expExt = (numExpandFrames - 1) - expExt;
+				}
+
+				SwinGame.DrawTextLines (btnText, Color.Yellow, Color.Black, GameResources.GameFont ("Menu"),
+					FontAlignment.AlignCenter, x, y - expExt / 2 + expExt, w, h + expExt * 2);
+
+				if (SwinGame.MouseDown (MouseButton.LeftButton)) {
+					SwinGame.DrawRectangle (HIGHLIGHT_COLOR, btnLeft, btnTop, BUTTON_WIDTH, BUTTON_HEIGHT);
+				}
+			} else {
+				SwinGame.DrawTextLines (btnText, MENU_COLOR, Color.Black, GameResources.GameFont ("Menu"),
+					FontAlignment.AlignCenter, x, y, w, h);
 			}
 		}
 	}
+	
 
 	/// <summary>
 	/// Determined if the mouse is over one of the button in the main menu.
@@ -277,6 +309,10 @@ static class MenuController
             case OPTION_MENU:
                 PerformOptionMenuAction(button);
                 break;
+		
+			case MUTE_MENU:
+				GameResources.MuteButtonPressed ();
+				break;
         }
 	}
 
@@ -302,6 +338,9 @@ static class MenuController
             case MAIN_MENU_QUIT_BUTTON:
 			GameController.EndCurrentState();
 				break;
+		case MAIN_MENU_MUTE_BUTTON:
+			GameResources.MuteButtonPressed ();
+			break;
 		}
 	}
 
