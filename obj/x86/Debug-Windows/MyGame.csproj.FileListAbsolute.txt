@@ -457,11 +457,6 @@ C:\battleships\bin\Debug\Resources\sounds\sink.wav
 C:\battleships\bin\Debug\Resources\sounds\SwinGameStart.ogg
 C:\battleships\bin\Debug\Resources\sounds\watershot.wav
 C:\battleships\bin\Debug\Resources\sounds\winner.wav
-C:\battleships\bin\Debug\Resources\images\boat.png
-C:\battleships\bin\Debug\Resources\images\ac.png
-C:\battleships\bin\Debug\Resources\images\battleship.png
-C:\battleships\bin\Debug\Resources\images\destroyer.png
-C:\battleships\bin\Debug\Resources\images\yacht.jpg
 C:\battleships\bin\Debug\MyGame.exe
 C:\battleships\bin\Debug\SwinGame.dll
 C:\battleships\obj\x86\Debug-Windows\MyGame.exe
