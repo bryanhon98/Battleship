@@ -29,8 +29,8 @@ public static class GameController
 	private static AIPlayer _ai;
 
 	private static string _music = "Background";
-	private static Boolean Musicstate;
-	private static Boolean Music = true;
+	public static Boolean Musicstate;
+	public static Boolean Music = true;
 
 	private static Stack<GameState> _state = new Stack<GameState>();
 
@@ -89,7 +89,7 @@ public static class GameController
 		if (_theGame != null)
 			EndGame();
 
-
+		SwinGame.PlayMusic (GameResources.GameMusic("Background2"));
 		//Create the game
 		_theGame = new BattleShipsGame();
 
@@ -320,9 +320,7 @@ public static class GameController
             case GameState.AlteringOption:
                 MenuController.HandleOptionMenuInput();
                 break;
-			case GameState.ChangingMusic:
-				MenuController.HandleMusicMenuInput ();
-				break;
+
         }
 
 		UtilityFunctions.UpdateAnimations();
@@ -363,9 +361,7 @@ public static class GameController
             case GameState.AlteringOption:
                 MenuController.DrawOption();
                 break;
-			case GameState.ChangingMusic:
-				MenuController.DrawMusicMenu ();
-				break;
+
         }
 
 		UtilityFunctions.DrawAnimations();

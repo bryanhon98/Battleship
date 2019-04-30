@@ -745,3 +745,4 @@ C:\battleships\bin\Debug\normnfc.nlp
 C:\battleships\bin\Debug\normnfd.nlp
 C:\battleships\bin\Debug\normnfkc.nlp
 C:\battleships\bin\Debug\normnfkd.nlp
+C:\battleships\bin\Debug\Resources\sounds\Battle.mp3

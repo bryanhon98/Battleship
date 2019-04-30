@@ -34,15 +34,13 @@ static class MenuController
 
 	private static readonly string [] [] _menuStructure = {
 		new string[] {
-			"PLAY","SETUP","SCORES","MUTE","OPTION","QUIT","MUSIC"},
+			"PLAY","SETUP","SCORES","MUTE","OPTION","QUIT"},
 
 		new string[] {"RETURN","SURRENDER","QUIT"},
 
 		new string[] {"EASY","MEDIUM","HARD"},
 
 		new string[] { "FULLSCREEN "," BORDERLESS"},
-
-		new string[] { "MUSIC 1 "," MUSIC 2"},
 		};
 
 	private const int MAIN_MENU = 0;
@@ -50,7 +48,6 @@ static class MenuController
 	private const int SETUP_MENU = 2;
 	private const int OPTION_MENU = 3;
 	private const int MUTE_MENU = 4;
-	private const int MUSIC_MENU = 5;
 
 	private const int MAIN_MENU_PLAY_BUTTON = 0;
 	private const int MAIN_MENU_SETUP_BUTTON = 1;
@@ -58,10 +55,6 @@ static class MenuController
 	private const int MAIN_MENU_MUTE_BUTTON = 3;
 	private const int MAIN_MENU_QUIT_BUTTON = 5;
 	private const int MAIN_MENU_OPTION_BUTTON = 4;
-	private const int MAIN_MENU_MUSIC_BUTTON = 6;
-
-	private const int MUSIC_1 = 0;
-	private const int MUSIC_2 = 1;
 
 	private const int SETUP_MENU_EASY_BUTTON = 0;
 	private const int SETUP_MENU_MEDIUM_BUTTON = 1;
@@ -86,15 +79,6 @@ static class MenuController
 		HandleMenuInput (MAIN_MENU, 0, 0);
 	}
 
-	public static void HandleMusicMenuInput ()
-	{
-		bool handled = false;
-		handled = HandleMenuInput (MUSIC_MENU, 1, 1);
-
-		if (!handled) {
-			HandleMenuInput (MAIN_MENU, 0, 0);
-		}
-	}
 	/// <summary>
 	/// Handles the processing of user input when the main menu is showing
 	/// </summary>
@@ -207,12 +191,6 @@ static class MenuController
 
 		DrawButtons (MAIN_MENU);
 		DrawButtons (SETUP_MENU, 1, 1);
-	}
-
-	public static void DrawMusicMenu ()
-	{
-		DrawButtons (MAIN_MENU);
-		DrawButtons (MUSIC_MENU, 1, 1);
 	}
 
 	/// <summary>
@@ -334,9 +312,6 @@ static class MenuController
 		case MUTE_MENU:
 			GameResources.MuteButtonPressed ();
 			break;
-		case MUSIC_MENU:
-			PerformMusicMenuAction (button);
-			break;
 		}
 	}
 
@@ -365,9 +340,7 @@ static class MenuController
 		case MAIN_MENU_MUTE_BUTTON:
 			GameResources.MuteButtonPressed ();
 			break;
-		case MAIN_MENU_MUSIC_BUTTON:
-			GameController.AddNewState (GameState.ChangingMusic);
-			break;
+	
 		}
 	}
 
@@ -431,17 +404,6 @@ static class MenuController
 		}
 	}
 
-	private static void PerformMusicMenuAction (int button)
-	{
-		switch (button) {
-		case MUSIC_1:
-			GameController.SetMusic ("Background");
-			break;
-		case MUSIC_2:
-			GameController.SetMusic ("Background2");
-			break;
-		}
-	}
 }
 
 //=======================================================
