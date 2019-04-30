@@ -313,22 +313,6 @@ C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\src\GameStat
 C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\src\HighScoreController.cs
 C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\src\MenuController.cs
 C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\src\UtilityFunctions.cs
-C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\src\Model\AIHardPlayer.cs
-C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\src\Model\AIMediumPlayer.cs
-C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\src\Model\AIOption.cs
-C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\src\Model\AIPlayer.cs
-C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\src\Model\AttackResult.cs
-C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\src\Model\BattleShipsGame.cs
-C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\src\Model\Direction.cs
-C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\src\Model\ISeaGrid.cs
-C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\src\Model\Player.cs
-C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\src\Model\ResultOfAttack.cs
-C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\src\Model\SeaGrid.cs
-C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\src\Model\SeaGridAdapter.cs
-C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\src\Model\Ship.cs
-C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\src\Model\ShipName.cs
-C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\src\Model\Tile.cs
-C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\src\Model\TileView.cs
 C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Resources\animations\startup.txt
 C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Resources\bundles\FileDialog.txt
 C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Resources\bundles\splash.txt
@@ -384,11 +368,6 @@ C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Resources\so
 C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Resources\sounds\SwinGameStart.ogg
 C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Resources\sounds\watershot.wav
 C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Resources\sounds\winner.wav
-C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Resources\images\boat.png
-C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Resources\images\ac.png
-C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Resources\images\battleship.png
-C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Resources\images\destroyer.png
-C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Resources\images\yacht.jpg
 C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\MyGame.exe
 C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\SwinGame.dll
 C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\obj\x86\Debug-Windows\MyGame.exe
@@ -746,3 +725,18 @@ C:\battleships\bin\Debug\normnfd.nlp
 C:\battleships\bin\Debug\normnfkc.nlp
 C:\battleships\bin\Debug\normnfkd.nlp
 C:\battleships\bin\Debug\Resources\sounds\Battle.mp3
+C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Resources\.DS_Store
+C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Resources\animations\.DS_Store
+C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Resources\images\.DS_Store
+C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\src\GameMain.cs
+C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\lib\.DS_Store
+C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\lib\cygpath
+C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\lib\SwinGame.dll
+C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\lib\SwinGame.dll.mdb
+C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\lib\godly\.DS_Store
+C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\lib\godly\libSGSDK.dylib
+C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\lib\mac\.DS_Store
+C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\lib\mac\libSGSDK.dylib
+C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\lib\sdl13\.DS_Store
+C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\lib\win\.DS_Store
+C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Resources\sounds\Battle.mp3
