@@ -147,16 +147,12 @@ C:\battleships\bin\Debug\Resources\animations\.DS_Store
 C:\battleships\bin\Debug\Resources\animations\splash.txt
 C:\battleships\bin\Debug\Resources\fonts\ffaccess.ttf
 C:\battleships\bin\Debug\Resources\images\.DS_Store
-C:\battleships\bin\Debug\Resources\images\ac.png
-C:\battleships\bin\Debug\Resources\images\battleship.png
-C:\battleships\bin\Debug\Resources\images\boat.png
 C:\battleships\bin\Debug\Resources\images\deploy.jpg
 C:\battleships\bin\Debug\Resources\images\deploy_button_hl.png
 C:\battleships\bin\Debug\Resources\images\deploy_dir_button_horiz.png
 C:\battleships\bin\Debug\Resources\images\deploy_dir_button_vert.png
 C:\battleships\bin\Debug\Resources\images\deploy_play_button.png
 C:\battleships\bin\Debug\Resources\images\deploy_randomize_button.png
-C:\battleships\bin\Debug\Resources\images\destroyer.png
 C:\battleships\bin\Debug\Resources\images\discover.jpg
 C:\battleships\bin\Debug\Resources\images\explosion.png
 C:\battleships\bin\Debug\Resources\images\loader_empty.png
@@ -175,7 +171,6 @@ C:\battleships\bin\Debug\Resources\images\ship_deploy_vert_5.png
 C:\battleships\bin\Debug\Resources\images\splash.png
 C:\battleships\bin\Debug\Resources\images\SplashBack.png
 C:\battleships\bin\Debug\Resources\images\SwinGameAni.jpg
-C:\battleships\bin\Debug\Resources\images\yacht.jpg
 C:\battleships\bin\Debug\Resources\sounds\Battleship.mp3
 C:\battleships\bin\Debug\Resources\sounds\hit.wav
 C:\battleships\bin\Debug\Resources\sounds\horrordrone.mp3
@@ -213,3 +208,4 @@ C:\battleships\obj\x86\Debug-Mac\MyGame.csproj.CoreCompileInputs.cache
 C:\battleships\obj\x86\Debug-Mac\MyGame.csproj.CopyComplete
 C:\battleships\obj\x86\Debug-Mac\MyGame.exe
 C:\battleships\obj\x86\Debug-Mac\MyGame.pdb
+C:\battleships\bin\Debug\Resources\sounds\Battle.mp3
