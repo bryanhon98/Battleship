@@ -42,6 +42,7 @@ static class DeploymentController
 	/// </remarks>
 	public static void HandleDeploymentInput ()
 	{
+
 		if (SwinGame.KeyTyped (KeyCode.vk_ESCAPE)) {
 			GameController.AddNewState (GameState.ViewingGameMenu);
 		}
