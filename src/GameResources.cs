@@ -6,6 +6,7 @@ using System.Collections.Generic;
 //using System.Data;
 using System.Diagnostics;
 using SwinGameSDK;
+using System.Windows.Forms;
 
 public static class GameResources
 {

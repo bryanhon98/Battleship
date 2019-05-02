@@ -6,6 +6,8 @@ using System.Collections.Generic;
 //using System.Data;
 using System.Diagnostics;
 using SwinGameSDK;
+using System.Windows.Forms;
+
 
 
 /// <summary>
@@ -399,13 +401,20 @@ static class MenuController
 		case MAIN_MUSIC_SETUP_BUTTON:
 			GameController.AddNewState (GameState.ChangingMusic);
 			break;
-		case MAIN_MENU_QUIT_BUTTON:
-			GameController.EndCurrentState ();
-			break;
-		case MAIN_MENU_MUTE_BUTTON:
-			GameResources.MuteButtonPressed ();
-			break;
-
+            case MAIN_MENU_QUIT_BUTTON:
+                if (MessageBox.Show("Are you sure you want to quit?", "QUIT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    GameController.AddNewState(GameState.Quitting);
+                    break;
+                }
+                else
+                {
+                    break;
+                }
+            case MAIN_MENU_MUTE_BUTTON:
+                GameResources.MuteButtonPressed();
+                break;
+           
 
 		}
 	}
@@ -464,39 +473,44 @@ static class MenuController
 			GameController.EndCurrentState ();
 			//end game
 			break;
-		case GAME_MENU_QUIT_BUTTON:
-			GameController.AddNewState (GameState.Quitting);
-			break;
-		}
+            case GAME_MENU_QUIT_BUTTON:
+                if (MessageBox.Show("Are you sure you want to quit?", "QUIT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    GameController.AddNewState(GameState.Quitting);
+                    break;
+                }
+                else
+                {
+                    break;
+                }
+        }
 	}
 	public static void PerformBackMenuAction (int button)
 	{
 
 		GameController.EndCurrentState ();	}
-	private static void PerformMusicMenuAction (int button)
-	{
+    private static void PerformMusicMenuAction(int button)
+    {
 
-		switch (button) {
-		case MUSIC_1:
-			GameController.SetMusic ("Background");
-			break;
-		case MUSIC_2:
-			GameController.SetMusic ("Background2");
-			break;
-		case MUSIC_3:
-			GameController.SetMusic ("Background3");
-			break;
-
-
-
-			//case TURN_OFF:
-			//	GameController.SetMusic ("Off");
-			//	break;
-			//case TURN_ON:
-			//	GameController.SetMusic ("Background");
-			//	break;
-		}
-	}
+        switch (button)
+        {
+            case MUSIC_1:
+                SwinGame.PlayMusic(GameResources.GameMusic("Background"));
+                break;
+            case MUSIC_2:
+                SwinGame.PlayMusic(GameResources.GameMusic("Background2"));
+                break;
+            case MUSIC_3:
+                SwinGame.PlayMusic(GameResources.GameMusic("Background3"));
+                break;
+                //case TURN_OFF:
+                //	GameController.SetMusic ("Off");
+                //	break;
+                //case TURN_ON:
+                //	GameController.SetMusic ("Background");
+                //	break;
+        }
+    }
 }
 
 //=======================================================
