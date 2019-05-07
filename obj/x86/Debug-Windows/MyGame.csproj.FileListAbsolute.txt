@@ -905,7 +905,6 @@ C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Resources\im
 C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\MyGame.exe
 C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\SwinGame.dll
 C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\obj\x86\Debug-Windows\MyGame.exe
-C:\battleships\obj\x86\Debug-Windows\MyGame.csprojAssemblyReference.cache
 C:\battleships\obj\x86\Debug-Windows\MyGame.csproj.CoreCompileInputs.cache
 C:\battleships\obj\x86\Debug-Windows\MyGame.csproj.CopyComplete
 C:\battleships\bin\Debug\Resources\sounds\Battle.mp3
@@ -992,3 +991,4 @@ C:\Users\100077774\Downloads\battleships\battleships\bin\Debug\Resources\sounds\
 C:\Users\100077774\Downloads\battleships\battleships\bin\Debug\MyGame.exe
 C:\Users\100077774\Downloads\battleships\battleships\bin\Debug\SwinGame.dll
 C:\Users\100077774\Downloads\battleships\battleships\obj\x86\Debug-Windows\MyGame.exe
+C:\battleships\obj\x86\Debug-Windows\MyGame.csprojAssemblyReference.cache
