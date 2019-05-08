@@ -992,3 +992,6 @@ C:\Users\100077774\Downloads\battleships\battleships\obj\x86\Debug-Windows\MyGam
 C:\battleships\bin\Debug\Resources\images\b1.jpg
 C:\battleships\bin\Debug\Resources\images\b2.jpg
 C:\battleships\bin\Debug\Resources\images\b3.jpg
+C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Resources\images\b1.jpg
+C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Resources\images\b2.jpg
+C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Resources\images\b3.jpg
