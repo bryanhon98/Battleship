@@ -35,7 +35,7 @@ static class MenuController
 	private const int TEXT_OFFSET = 0;
 
 	private static readonly string [] [] _menuStructure = {
-		new string[] {"PLAY","SETUP","MUSIC","SCORES","OPTION","MUTE","QUIT"},
+		new string[] {"PLAY","SETUP","MUSIC","SCORES","OPTION","MUTE","QUIT", "BG"},
 
 		new string[] {"RETURN","SURRENDER","QUIT"},
 
@@ -58,8 +58,8 @@ static class MenuController
 	private const int MUSIC_MENU = 3;
 	private const int OPTION_MENU = 4;
 	private const int BACK_MENU = 5;
-	private const int MUTE_MENU = 6;
-	private const int BG_MENU = 7;
+	private const int MUTE_MENU = 7;
+	private const int BG_MENU = 6;
 
 
 	private const int MAIN_MENU_PLAY_BUTTON = 0;
@@ -518,7 +518,8 @@ static class MenuController
 		switch (button) 
 		{
 			case BG_BG1:
-			MenuController.BGOption = 0;
+
+			//MenuController.BGOption = 0;
 			break;
 		case BG_BG2:
 			MenuController.BGOption = 1;

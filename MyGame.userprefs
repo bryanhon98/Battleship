@@ -5,16 +5,18 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="src\DiscoveryController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src\MenuController.cs">
     <Files>
-      <File FileName="src\DiscoveryController.cs" Line="69" Column="57" />
+      <File FileName="src\DiscoveryController.cs" Line="69" Column="32" />
       <File FileName="src\DeploymentController.cs" Line="13" Column="2" />
       <File FileName="src\EndingGameController.cs" Line="13" Column="15" />
-      <File FileName="src\GameController.cs" Line="12" Column="35" />
+      <File FileName="src\GameController.cs" Line="448" Column="3" />
       <File FileName="src\GameLogic.cs" Line="31" Column="3" />
       <File FileName="src\GameMain.cs" Line="19" Column="19" />
-      <File FileName="src\GameResources.cs" Line="16" Column="6" />
+      <File FileName="src\GameResources.cs" Line="51" Column="30" />
       <File FileName="src\Rules.cs" Line="18" Column="90" />
+      <File FileName="src\MenuController.cs" Line="524" Column="27" />
+      <File FileName="src\GameState.cs" Line="16" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />
