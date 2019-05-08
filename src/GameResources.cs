@@ -48,6 +48,10 @@ public static class GameResources
         NewImage("Discovery", "discover.jpg");
         NewImage("Deploy", "deploy.jpg");
 
+		NewImage ("bg1", "b1.jpg");
+		NewImage ("bg2", "b2.jpg");
+		NewImage ("bg3", "b3.jpg");
+
         //Deployment
         NewImage("LeftRightButton", "deploy_dir_button_horiz.png");
         NewImage("UpDownButton", "deploy_dir_button_vert.png");

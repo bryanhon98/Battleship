@@ -47,7 +47,7 @@ static class MenuController
 
 		new string[] {"BACK"},
 
-
+		new string[] {"BG1", "BG2", "BG3"},
 
 
 		};
@@ -59,8 +59,7 @@ static class MenuController
 	private const int OPTION_MENU = 4;
 	private const int BACK_MENU = 5;
 	private const int MUTE_MENU = 6;
-
-
+	private const int BG_MENU = 7;
 
 
 	private const int MAIN_MENU_PLAY_BUTTON = 0;
@@ -70,6 +69,7 @@ static class MenuController
 	private const int MAIN_MENU_OPTION_BUTTON = 4;
 	private const int MAIN_MENU_MUTE_BUTTON = 5;
 	private const int MAIN_MENU_QUIT_BUTTON = 6;
+	private const int MAIN_MENU_CHANGEBG_BUTTON = 7;
 
 	private const int SETUP_MENU_EASY_BUTTON = 0;
 	private const int SETUP_MENU_MEDIUM_BUTTON = 1;
@@ -87,10 +87,12 @@ static class MenuController
 	private const int MUSIC_2 = 1;
 	private const int MUSIC_3 = 2;
 
+	private const int BG_BG1 = 0;
+	private const int BG_BG2 = 1;
+	private const int BG_BG3 = 2;
 
 
-
-
+	private static int BGOption = 0;
 
 
 	private static readonly Color MENU_COLOR = SwinGame.RGBAColor (2, 167, 252, 255);
@@ -147,6 +149,15 @@ static class MenuController
 	{
 		HandleMenuInput (BACK_MENU, 0, 0);	}
 
+	public static void HandleBGMenuInput ()
+	{
+		bool handled = false;
+		handled = HandleMenuInput (BG_MENU, 1, 2);
+
+		if (!handled) {
+			HandleMenuInput (MAIN_MENU, 0 ,0);
+		}
+	}
 	/// <summary>
 	/// Handles input for the specified menu.
 	/// </summary>
@@ -244,6 +255,12 @@ static class MenuController
 	{
 		DrawButtons (MAIN_MENU);
 		DrawButtons (MUSIC_MENU, 1, 2);
+	}
+
+	public static void DrawBGOption ()
+	{
+		DrawButtons (MAIN_MENU);
+		DrawButtons (BG_MENU, 1, 5);
 	}
 
 	/// <summary>
@@ -370,6 +387,9 @@ static class MenuController
 		case MUSIC_MENU:
 			PerformMusicMenuAction (button);
 			break;
+		case BG_MENU:
+			PerformChangeBGAction (button);
+			break;
 		}
 	}
 
@@ -414,7 +434,9 @@ static class MenuController
             case MAIN_MENU_MUTE_BUTTON:
                 GameResources.MuteButtonPressed();
                 break;
-           
+		case MAIN_MENU_CHANGEBG_BUTTON:
+			GameController.AddNewState (GameState.changebg);
+			break;
 
 		}
 	}
@@ -485,10 +507,32 @@ static class MenuController
                 }
         }
 	}
+
 	public static void PerformBackMenuAction (int button)
 	{
 
 		GameController.EndCurrentState ();	}
+
+	public static void PerformChangeBGAction (int button)
+	{
+		switch (button) 
+		{
+			case BG_BG1:
+			MenuController.BGOption = 0;
+			break;
+		case BG_BG2:
+			MenuController.BGOption = 1;
+			break;
+		case BG_BG3:
+			MenuController.BGOption = 3;
+			break;
+		}
+
+		GameController.EndCurrentState ();
+
+	}
+
+
     private static void PerformMusicMenuAction(int button)
     {
 
