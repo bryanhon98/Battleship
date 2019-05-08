@@ -518,13 +518,16 @@ static class MenuController
 		switch (button) 
 		{
 			case BG_BG1:
-			MenuController.BGOption = 0;
+			SwinGame.DrawBitmap (GameResources.GameImage ("bg1"), 0, 0);
+			//MenuController.BGOption = 0;
 			break;
 		case BG_BG2:
-			MenuController.BGOption = 1;
+			SwinGame.DrawBitmap (GameResources.GameImage ("bg2"), 0, 0);
+			//MenuController.BGOption = 1;
 			break;
 		case BG_BG3:
-			MenuController.BGOption = 3;
+			SwinGame.DrawBitmap (GameResources.GameImage ("bg3"), 0, 0);
+			//MenuController.BGOption = 3;
 			break;
 		}
 
