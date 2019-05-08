@@ -35,10 +35,10 @@ public static class GameController
 
 	public static Timer HighlightTimer = SwinGame.CreateTimer ();
 
-    public static Stopwatch stopWatch = new Stopwatch();
+	public static Stopwatch stopWatch = new Stopwatch ();
 
-    private static bool _started = false;
-    private static AIOption _aiSetting;
+	private static bool _started = false;
+	private static AIOption _aiSetting;
 	/// <summary>
 	/// Returns the current state of the game, indicating which screen is
 	/// currently being used
@@ -49,16 +49,15 @@ public static class GameController
 		get { return _state.Peek (); }
 	}
 
-    public static bool IsStarted
-    {
-        get { return _started; }
-    }
-    /// <summary>
-    /// Returns the human player.
-    /// </summary>
-    /// <value>the human player</value>
-    /// <returns>the human player</returns>
-    public static Player HumanPlayer {
+	public static bool IsStarted {
+		get { return _started; }
+	}
+	/// <summary>
+	/// Returns the human player.
+	/// </summary>
+	/// <value>the human player</value>
+	/// <returns>the human player</returns>
+	public static Player HumanPlayer {
 		get { return _human; }
 	}
 
@@ -83,9 +82,9 @@ public static class GameController
 		//at the start the player is viewing the main menu
 		_state.Push (GameState.ViewingMainMenu);
 
-        //SwinGame.StartTimer(HighlightTimer);
-       
-    }
+		//SwinGame.StartTimer(HighlightTimer);
+
+	}
 
 	/// <summary>
 	/// Starts a new game.
@@ -95,19 +94,16 @@ public static class GameController
 	/// </remarks>
 	public static void StartGame ()
 	{
-        if (_theGame != null)
-        {
-            EndGame();
-            
-        }
-        else if (!IsStarted)
-        {
-            _started = true;
-            stopWatch.Start();
+		if (_theGame != null) {
+			EndGame ();
+
+		} else if (!IsStarted) {
+			_started = true;
+			stopWatch.Start ();
 
 
-        }
-    
+		}
+
 		SwinGame.PlayMusic (GameResources.GameMusic ("Background2"));
 		//Create the game
 		_theGame = new BattleShipsGame ();
@@ -116,7 +112,7 @@ public static class GameController
 		switch (_aiSetting) {
 		case AIOption.Easy:
 			_ai = new AIEasyPlayer (_theGame);
-                
+
 			break;
 		case AIOption.Medium:
 			_ai = new AIMediumPlayer (_theGame);
@@ -147,13 +143,13 @@ public static class GameController
 		//RemoveHandler _human.PlayerGrid.Changed, AddressOf GridChanged
 		_ai.PlayerGrid.Changed -= GridChanged;
 		_theGame.AttackCompleted -= AttackCompleted;
-        stopWatch.Stop();
+		stopWatch.Stop ();
 
 
 
 
 
-    }
+	}
 
 	/// <summary>
 	/// Listens to the game grids for any changes and redraws the screen
@@ -325,9 +321,11 @@ public static class GameController
 		case GameState.ViewingMainMenu:
 			MenuController.HandleMainMenuInput ();
 			break;
+		case GameState.ViewingInstruction:
+			Rules.HandleInstruction ();
+			break;
 		case GameState.ViewingGameMenu:
 			MenuController.HandleGameMenuInput ();
-                
 			break;
 		case GameState.AlteringSettings:
 			MenuController.HandleSetupMenuInput ();
@@ -340,7 +338,7 @@ public static class GameController
 			break;
 		case GameState.EndingGame:
 			EndingGameController.HandleEndOfGameInput ();
-                
+
 			break;
 		case GameState.ViewingHighScores:
 			HighScoreController.HandleHighScoreInput ();
@@ -373,6 +371,9 @@ public static class GameController
 		switch (CurrentState) {
 		case GameState.ViewingMainMenu:
 			MenuController.DrawMainMenu ();
+			break;
+		case GameState.ViewingInstruction:
+			Rules.DrawInstruction ();
 			break;
 		case GameState.ViewingGameMenu:
 			MenuController.DrawGameMenu ();

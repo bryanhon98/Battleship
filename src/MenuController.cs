@@ -35,7 +35,7 @@ static class MenuController
 	private const int TEXT_OFFSET = 0;
 
 	private static readonly string [] [] _menuStructure = {
-		new string[] {"PLAY","SETUP","MUSIC","SCORES","OPTION","MUTE","QUIT", "BG"},
+		new string[] {"PLAY","INSTRUCTION","SETUP","MUSIC","SCORES","OPTION","MUTE","QUIT", "BG"},
 
 		new string[] {"RETURN","SURRENDER","QUIT"},
 
@@ -49,7 +49,6 @@ static class MenuController
 
 		new string[] {"BG1", "BG2", "BG3"},
 
-
 		};
 
 	private const int MAIN_MENU = 0;
@@ -58,18 +57,19 @@ static class MenuController
 	private const int MUSIC_MENU = 3;
 	private const int OPTION_MENU = 4;
 	private const int BACK_MENU = 5;
-	private const int MUTE_MENU = 7;
-	private const int BG_MENU = 6;
+	private const int MUTE_MENU = 6;
+	private const int BG_MENU = 7;
 
 
 	private const int MAIN_MENU_PLAY_BUTTON = 0;
-	private const int MAIN_MENU_SETUP_BUTTON = 1;
-	private const int MAIN_MUSIC_SETUP_BUTTON = 2;
-	private const int MAIN_MENU_TOP_SCORES_BUTTON = 3;
-	private const int MAIN_MENU_OPTION_BUTTON = 4;
-	private const int MAIN_MENU_MUTE_BUTTON = 5;
-	private const int MAIN_MENU_QUIT_BUTTON = 6;
-	private const int MAIN_MENU_CHANGEBG_BUTTON = 7;
+	private const int MAIN_MENU_INSTRUCTION_BUTTON = 1;
+	private const int MAIN_MENU_SETUP_BUTTON = 2;
+	private const int MAIN_MUSIC_SETUP_BUTTON = 3;
+	private const int MAIN_MENU_TOP_SCORES_BUTTON = 4;
+	private const int MAIN_MENU_OPTION_BUTTON = 5;
+	private const int MAIN_MENU_MUTE_BUTTON = 6;
+	private const int MAIN_MENU_QUIT_BUTTON = 7;
+	private const int MAIN_MENU_CHANGEBG_BUTTON = 8;
 
 	private const int SETUP_MENU_EASY_BUTTON = 0;
 	private const int SETUP_MENU_MEDIUM_BUTTON = 1;
@@ -155,7 +155,7 @@ static class MenuController
 		handled = HandleMenuInput (BG_MENU, 1, 2);
 
 		if (!handled) {
-			HandleMenuInput (MAIN_MENU, 0 ,0);
+			HandleMenuInput (MAIN_MENU, 0, 0);
 		}
 	}
 	/// <summary>
@@ -409,6 +409,9 @@ static class MenuController
 		case MAIN_MENU_PLAY_BUTTON:
 			GameController.StartGame ();
 			break;
+		case MAIN_MENU_INSTRUCTION_BUTTON:
+			GameController.AddNewState (GameState.ViewingInstruction);
+			break;
 		case MAIN_MENU_SETUP_BUTTON:
 			GameController.AddNewState (GameState.AlteringSettings);
 			break;
@@ -421,19 +424,16 @@ static class MenuController
 		case MAIN_MUSIC_SETUP_BUTTON:
 			GameController.AddNewState (GameState.ChangingMusic);
 			break;
-            case MAIN_MENU_QUIT_BUTTON:
-                if (MessageBox.Show("Are you sure you want to quit?", "QUIT", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    GameController.AddNewState(GameState.Quitting);
-                    break;
-                }
-                else
-                {
-                    break;
-                }
-            case MAIN_MENU_MUTE_BUTTON:
-                GameResources.MuteButtonPressed();
-                break;
+		case MAIN_MENU_QUIT_BUTTON:
+			if (MessageBox.Show ("Are you sure you want to quit?", "QUIT", MessageBoxButtons.YesNo) == DialogResult.Yes) {
+				GameController.AddNewState (GameState.Quitting);
+				break;
+			} else {
+				break;
+			}
+		case MAIN_MENU_MUTE_BUTTON:
+			GameResources.MuteButtonPressed ();
+			break;
 		case MAIN_MENU_CHANGEBG_BUTTON:
 			GameController.AddNewState (GameState.changebg);
 			break;
@@ -495,17 +495,14 @@ static class MenuController
 			GameController.EndCurrentState ();
 			//end game
 			break;
-            case GAME_MENU_QUIT_BUTTON:
-                if (MessageBox.Show("Are you sure you want to quit?", "QUIT", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    GameController.AddNewState(GameState.Quitting);
-                    break;
-                }
-                else
-                {
-                    break;
-                }
-        }
+		case GAME_MENU_QUIT_BUTTON:
+			if (MessageBox.Show ("Are you sure you want to quit?", "QUIT", MessageBoxButtons.YesNo) == DialogResult.Yes) {
+				GameController.AddNewState (GameState.Quitting);
+				break;
+			} else {
+				break;
+			}
+		}
 	}
 
 	public static void PerformBackMenuAction (int button)
@@ -515,9 +512,8 @@ static class MenuController
 
 	public static void PerformChangeBGAction (int button)
 	{
-		switch (button) 
-		{
-			case BG_BG1:
+		switch (button) {
+		case BG_BG1:
 			SwinGame.DrawBitmap (GameResources.GameImage ("bg1"), 0, 0);
 			//MenuController.BGOption = 0;
 			break;
@@ -536,28 +532,27 @@ static class MenuController
 	}
 
 
-    private static void PerformMusicMenuAction(int button)
-    {
+	private static void PerformMusicMenuAction (int button)
+	{
 
-        switch (button)
-        {
-            case MUSIC_1:
-                SwinGame.PlayMusic(GameResources.GameMusic("Background"));
-                break;
-            case MUSIC_2:
-                SwinGame.PlayMusic(GameResources.GameMusic("Background2"));
-                break;
-            case MUSIC_3:
-                SwinGame.PlayMusic(GameResources.GameMusic("Background3"));
-                break;
-                //case TURN_OFF:
-                //	GameController.SetMusic ("Off");
-                //	break;
-                //case TURN_ON:
-                //	GameController.SetMusic ("Background");
-                //	break;
-        }
-    }
+		switch (button) {
+		case MUSIC_1:
+			SwinGame.PlayMusic (GameResources.GameMusic ("Background"));
+			break;
+		case MUSIC_2:
+			SwinGame.PlayMusic (GameResources.GameMusic ("Background2"));
+			break;
+		case MUSIC_3:
+			SwinGame.PlayMusic (GameResources.GameMusic ("Background3"));
+			break;
+			//case TURN_OFF:
+			//	GameController.SetMusic ("Off");
+			//	break;
+			//case TURN_ON:
+			//	GameController.SetMusic ("Background");
+			//	break;
+		}
+	}
 }
 
 //=======================================================

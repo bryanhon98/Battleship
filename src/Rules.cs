@@ -9,13 +9,36 @@ using SwinGameSDK;
 
 public class Rules
 {
-	public Rules ()
+	private const int INST_LEFT = 10;
+
+	public static void HandleInstruction ()
 	{
-		Console.WriteLine ("Basic gameplay of Battleship");
-		Console.WriteLine ("Players take turns firing shots (by calling out a grid coordinate) to attack enemy ships." +
-						   "\n\nOn your turn, call out a letter and a number that identifies a row and column on your target grid. Your opponent checks that coordinate on his ocean grid and verbally responds \"miss\" if there is no ship there, or \"hit\" if you have correctly guessed a space that is occupied by one of his ships." +
-						   "\n\nMark each of your shots (guesses) on your upper target grid using white pegs to document your misses and red pegs to register your hits. As the game proceeds, the red pegs will gradually identify the size and location of your opponent's ships.\n\nWhen it is your opponent's turn to fire shots at you, each time one of your ships receives a hit, put a red peg into the hole on the ship corresponding to the grid space. When one of your ships has every slot filled with red pegs, you must announce to your opponent that he has sunk your ship. In classic play, the phrase used is \"You sunk my battleship!\" It is, of course, illegal to change the position of the ships on the board once play has begun. " +
-						   "\n\nThe first player to sink all five of his opponent's ships wins the game.");
+		if (SwinGame.MouseClicked (MouseButton.LeftButton) || SwinGame.KeyTyped (KeyCode.vk_ESCAPE) || SwinGame.KeyTyped (KeyCode.vk_RETURN)) {
+			GameController.EndCurrentState ();
+		}	}
+	public static void DrawInstruction ()
+	{
+		const int INST_TOP = 80;
+		const int INST_HEADING = 40;
+		SwinGame.DrawText ("Basic gameplay of Battleship", Color.White, GameResources.GameFont ("Courier"), INST_LEFT, INST_HEADING);
+		SwinGame.DrawText ("- Players take turns firing shots (by clicking on the tiles) to attack opponent's battleships.", Color.White, GameResources.GameFont ("Courier"), INST_LEFT, INST_TOP);
+		SwinGame.DrawText ("- On player's turn, click to fire on the tiles that player think opponent might placed their", Color.White, GameResources.GameFont ("Courier"), INST_LEFT, INST_TOP + 20);
+		SwinGame.DrawText ("  battleships at.", Color.White, GameResources.GameFont ("Courier"), INST_LEFT, INST_TOP + 35);
+		SwinGame.DrawText ("- If the tiles that player fired is where opponent placed their battleships at, player will hence", Color.White, GameResources.GameFont ("Courier"), INST_LEFT, INST_TOP + 55);
+		SwinGame.DrawText ("  get another round at firing.", Color.White, GameResources.GameFont ("Courier"), INST_LEFT, INST_TOP + 70);
+		SwinGame.DrawText ("- But if player did'nt fire at the tiles that the opponent placed, then it will then be opponent's", Color.White, GameResources.GameFont ("Courier"), INST_LEFT, INST_TOP + 90);
+		SwinGame.DrawText ("  turn.", Color.White, GameResources.GameFont ("Courier"), INST_LEFT, INST_TOP + 105);
+		SwinGame.DrawText ("- Tiles that player destroyed will be coloured with red.", Color.White, GameResources.GameFont ("Courier"), INST_LEFT, INST_TOP + 125);
+		SwinGame.DrawText ("- Tiles that player did'nt destroy will be coloured with blue.", Color.White, GameResources.GameFont ("Courier"), INST_LEFT, INST_TOP + 145);
+		SwinGame.DrawText ("- Winner is pick by whichever player that destroy all the opponent's battleships first.", Color.White, GameResources.GameFont ("Courier"), INST_LEFT, INST_TOP + 165);
+		SwinGame.DrawText ("- So basically the player to sink all five of his opponent's battleships wins the game.", Color.White, GameResources.GameFont ("Courier"), INST_LEFT, INST_TOP + 185);	}
+
+	public static void ViewInstruction ()
+	{
+
+		GameController.AddNewState (GameState.ViewingInstruction);
+		UtilityFunctions.DrawBackground ();
+		DrawInstruction ();
 	}
 }
 

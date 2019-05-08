@@ -1002,3 +1002,4 @@ C:\battleships\bin\Debug\normnfd.nlp
 C:\battleships\bin\Debug\normnfkc.nlp
 C:\battleships\bin\Debug\normnfkd.nlp
 C:\battleships\obj\x86\Debug-Windows\MyGame.csprojResolveAssemblyReference.cache
+C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Resources\images\inst.jpg
