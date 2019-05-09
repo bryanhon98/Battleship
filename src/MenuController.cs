@@ -41,7 +41,7 @@ static class MenuController
 
 		new string[] {"EASY","MEDIUM","HARD"},
 
-		//new string[] { "MUSIC 1 "," MUSIC 2", "MUSIC 3"},
+		new string[] { "MUSIC 1 "," MUSIC 2", "MUSIC 3"},
 
 		new string[] { "FULLSCREEN "," BORDERLESS"},
 

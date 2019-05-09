@@ -236,7 +236,7 @@ static class UtilityFunctions
 		case GameState.AlteringOption:
 
 		case GameState.ViewingHighScores:
-			SwinGame.DrawBitmap (GameResources.GameImage ("Menu"), 0, 0);
+			SwinGame.DrawBitmap (GameResources.GameImage ("bg3"), 0, 0);
 			break;
 		case GameState.ViewingInstruction:
 			SwinGame.DrawBitmap (GameResources.GameImage ("Instruction"), 0, 0);

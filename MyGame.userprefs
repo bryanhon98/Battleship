@@ -14,7 +14,7 @@
       <File FileName="src\GameLogic.cs" Line="27" Column="24" />
       <File FileName="src\GameMain.cs" Line="22" Column="44" />
       <File FileName="src\GameResources.cs" Line="51" Column="30" />
-      <File FileName="src\MenuController.cs" Line="527" Column="32" />
+      <File FileName="src\MenuController.cs" Line="39" Column="3" />
       <File FileName="src\GameState.cs" Line="24" Column="2" />
       <File FileName="src\HighScoreController.cs" Line="195" Column="28" />
       <File FileName="src\UtilityFunctions.cs" Line="253" Column="10" />
