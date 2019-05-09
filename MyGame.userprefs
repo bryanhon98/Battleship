@@ -7,7 +7,7 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workbench ActiveDocument="battleships Status">
     <Files>
-      <File FileName="src\DiscoveryController.cs" Line="58" Column="17" />
+      <File FileName="src\DiscoveryController.cs" Line="61" Column="31" />
       <File FileName="src\DeploymentController.cs" Line="13" Column="2" />
       <File FileName="src\EndingGameController.cs" Line="13" Column="15" />
       <File FileName="src\GameController.cs" Line="405" Column="12" />
