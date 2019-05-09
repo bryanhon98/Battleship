@@ -57,8 +57,8 @@ static class MenuController
 	private const int MUSIC_MENU = 3;
 	private const int OPTION_MENU = 4;
 	private const int BACK_MENU = 5;
-	private const int MUTE_MENU = 6;
-	private const int BG_MENU = 7;
+	private const int MUTE_MENU = 7;
+	private const int BG_MENU = 6;
 
 
 	private const int MAIN_MENU_PLAY_BUTTON = 0;
@@ -92,12 +92,14 @@ static class MenuController
 	private const int BG_BG3 = 2;
 
 
-	private static int BGOption = 0;
+	//private static int BGOption = 0;
 
 
 	private static readonly Color MENU_COLOR = SwinGame.RGBAColor (2, 167, 252, 255);
 
 	private static readonly Color HIGHLIGHT_COLOR = SwinGame.RGBAColor (1, 57, 86, 255);
+
+
 	/// <summary>
 	/// Handles the processing of user input when the main menu is showing
 	/// </summary>
@@ -514,6 +516,7 @@ static class MenuController
 	{
 		switch (button) {
 		case BG_BG1:
+			GameController.SwitchState(GameState.changebg);
 			SwinGame.DrawBitmap (GameResources.GameImage ("bg1"), 0, 0);
 			//MenuController.BGOption = 0;
 			break;

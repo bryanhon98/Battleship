@@ -5,9 +5,9 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="battleships Status">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src\DiscoveryController.cs">
     <Files>
-      <File FileName="src\DiscoveryController.cs" Line="69" Column="32" />
+      <File FileName="src\DiscoveryController.cs" Line="70" Column="4" />
       <File FileName="src\DeploymentController.cs" Line="13" Column="2" />
       <File FileName="src\EndingGameController.cs" Line="13" Column="15" />
       <File FileName="src\GameController.cs" Line="324" Column="18" />
@@ -19,7 +19,6 @@
       <File FileName="src\HighScoreController.cs" Line="49" Column="29" />
       <File FileName="src\UtilityFunctions.cs" Line="239" Column="45" />
       <File FileName="src\Rules.cs" Line="35" Column="187" />
-      <File FileName="battleships Status" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />
