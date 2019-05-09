@@ -230,13 +230,21 @@ static class UtilityFunctions
 	{
 		switch (GameController.CurrentState) {
 		case GameState.ViewingMainMenu:
+			SwinGame.DrawBitmap (GameResources.GameImage ("bg3"), 0, 0);
+			break;
 		case GameState.ViewingGameMenu:
 		case GameState.AlteringSettings:
+			SwinGame.DrawBitmap (GameResources.GameImage ("bg3"), 0, 0);
+			break;
 		case GameState.ChangingMusic:
+			SwinGame.DrawBitmap (GameResources.GameImage ("bg3"), 0, 0);
+			break;
 		case GameState.AlteringOption:
+			SwinGame.DrawBitmap (GameResources.GameImage ("bg3"), 0, 0);
+			break;
 
 		case GameState.ViewingHighScores:
-			SwinGame.DrawBitmap (GameResources.GameImage ("bg3"), 0, 0);
+			SwinGame.DrawBitmap (GameResources.GameImage ("Menu"), 0, 0);
 			break;
 		case GameState.ViewingInstruction:
 			SwinGame.DrawBitmap (GameResources.GameImage ("Instruction"), 0, 0);
@@ -247,9 +255,6 @@ static class UtilityFunctions
 			break;
 		case GameState.Deploying:
 			SwinGame.DrawBitmap (GameResources.GameImage ("Deploy"), 0, 0);
-			break;
-			case GameState.changebg:
-			SwinGame.DrawBitmap (GameResources.GameImage ("bg3"), 0, 0);
 			break;
 		default:
 			SwinGame.ClearScreen ();

@@ -349,9 +349,9 @@ public static class GameController
 		case GameState.ChangingMusic:
 			MenuController.HandleMusicMenuInput ();
 			break;
-		case GameState.changebg:
+		/*case GameState.changebg:
 			MenuController.HandleBGMenuInput ();
-			break;
+			break;*/
 
 		}
 
@@ -400,9 +400,9 @@ public static class GameController
 		case GameState.ChangingMusic:
 			MenuController.DrawMusicMenu ();
 			break;
-		case GameState.changebg:
+		/*case GameState.changebg:
 			MenuController.DrawBGOption ();
-			break;
+			break;*/
 		}
 
 		UtilityFunctions.DrawAnimations ();

@@ -35,7 +35,7 @@ static class MenuController
 	private const int TEXT_OFFSET = 0;
 
 	private static readonly string [] [] _menuStructure = {
-		new string[] {"PLAY","INSTRUCTION","SETUP","MUSIC","SCORES","OPTION","MUTE","QUIT", "BG"},
+		new string[] {"PLAY","INSTRUCTION","SETUP","MUSIC", "OPTION","SCORES","MUTE","QUIT"},
 
 		new string[] {"RETURN","SURRENDER","QUIT"},
 
@@ -47,7 +47,7 @@ static class MenuController
 
 		new string[] {"BACK"},
 
-		new string[] {"BG1", "BG2", "BG3"},
+		//new string[] {"BG1", "BG2", "BG3"},
 
 		};
 
@@ -58,18 +58,18 @@ static class MenuController
 	private const int OPTION_MENU = 4;
 	private const int BACK_MENU = 5;
 	private const int MUTE_MENU = 7;
-	private const int BG_MENU = 6;
+	//private const int BG_MENU = 6;
 
 
 	private const int MAIN_MENU_PLAY_BUTTON = 0;
 	private const int MAIN_MENU_INSTRUCTION_BUTTON = 1;
 	private const int MAIN_MENU_SETUP_BUTTON = 2;
 	private const int MAIN_MUSIC_SETUP_BUTTON = 3;
-	private const int MAIN_MENU_TOP_SCORES_BUTTON = 4;
-	private const int MAIN_MENU_OPTION_BUTTON = 5;
+	private const int MAIN_MENU_OPTION_BUTTON = 4;
+	private const int MAIN_MENU_TOP_SCORES_BUTTON = 5;
 	private const int MAIN_MENU_MUTE_BUTTON = 6;
 	private const int MAIN_MENU_QUIT_BUTTON = 7;
-	private const int MAIN_MENU_CHANGEBG_BUTTON = 8;
+	//private const int MAIN_MENU_CHANGEBG_BUTTON = 8;
 
 	private const int SETUP_MENU_EASY_BUTTON = 0;
 	private const int SETUP_MENU_MEDIUM_BUTTON = 1;
@@ -87,9 +87,10 @@ static class MenuController
 	private const int MUSIC_2 = 1;
 	private const int MUSIC_3 = 2;
 
-	private const int BG_BG1 = 0;
-	private const int BG_BG2 = 1;
-	private const int BG_BG3 = 2;
+
+	//private const int BG_BG1 = 0;
+	//private const int BG_BG2 = 1;
+	//private const int BG_BG3 = 2;
 
 
 	//private static int BGOption = 0;
@@ -151,15 +152,15 @@ static class MenuController
 	{
 		HandleMenuInput (BACK_MENU, 0, 0);	}
 
-	public static void HandleBGMenuInput ()
+	/*public static void HandleBGMenuInput ()
 	{
-		bool handled = false;
-		handled = HandleMenuInput (BG_MENU, 1, 2);
+		//bool handled = false;
+		HandleMenuInput (BG_MENU, 1, 2);
 
 		if (!handled) {
 			HandleMenuInput (MAIN_MENU, 0, 0);
 		}
-	}
+	}*/
 	/// <summary>
 	/// Handles input for the specified menu.
 	/// </summary>
@@ -259,11 +260,11 @@ static class MenuController
 		DrawButtons (MUSIC_MENU, 1, 2);
 	}
 
-	public static void DrawBGOption ()
+	/*public static void DrawBGOption ()
 	{
 		DrawButtons (MAIN_MENU);
 		DrawButtons (BG_MENU, 1, 5);
-	}
+	}*/
 
 	/// <summary>
 	/// Draw the buttons associated with a top level menu.
@@ -389,9 +390,9 @@ static class MenuController
 		case MUSIC_MENU:
 			PerformMusicMenuAction (button);
 			break;
-		case BG_MENU:
+		/*case BG_MENU:
 			PerformChangeBGAction (button);
-			break;
+			break;*/
 		}
 	}
 
@@ -436,9 +437,9 @@ static class MenuController
 		case MAIN_MENU_MUTE_BUTTON:
 			GameResources.MuteButtonPressed ();
 			break;
-		case MAIN_MENU_CHANGEBG_BUTTON:
+		/*case MAIN_MENU_CHANGEBG_BUTTON:
 			GameController.AddNewState (GameState.changebg);
-			break;
+			break;*/
 
 		}
 	}
@@ -512,19 +513,23 @@ static class MenuController
 
 		GameController.EndCurrentState ();	}
 
-	public static void PerformChangeBGAction (int button)
+	/*public static void PerformChangeBGAction (int button)
 	{
 		switch (button) {
 		case BG_BG1:
-			GameController.SwitchState(GameState.changebg);
+			//GameController.AddNewState (GameState.changebg1);
+			//GameController.SwitchState (GameState.changebg1);
 			SwinGame.DrawBitmap (GameResources.GameImage ("bg1"), 0, 0);
 			//MenuController.BGOption = 0;
 			break;
 		case BG_BG2:
+			//GameController.SwitchState (GameState.changebg2);
 			SwinGame.DrawBitmap (GameResources.GameImage ("bg2"), 0, 0);
 			//MenuController.BGOption = 1;
 			break;
 		case BG_BG3:
+			//GameController.SwitchState (GameState.changebg3);
+			//GameController.AddNewState (GameState.changebg3);
 			SwinGame.DrawBitmap (GameResources.GameImage ("bg3"), 0, 0);
 			//MenuController.BGOption = 3;
 			break;
@@ -532,7 +537,7 @@ static class MenuController
 
 		GameController.EndCurrentState ();
 
-	}
+	}*/
 
 
 	private static void PerformMusicMenuAction (int button)
