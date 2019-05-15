@@ -5,8 +5,9 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="battleships Status">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src\GameController.cs">
     <Files>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <File FileName="src\DiscoveryController.cs" Line="61" Column="31" />
       <File FileName="src\DeploymentController.cs" Line="13" Column="2" />
@@ -23,6 +24,9 @@
       <File FileName="src\Model\AIPlayer.cs" Line="150" Column="1" />
 =======
       <File FileName="src\GameController.cs" Line="45" Column="18" />
+=======
+      <File FileName="src\GameController.cs" Line="61" Column="13" />
+>>>>>>> fd214c5... Timer Added
       <File FileName="src\DiscoveryController.cs" Line="80" Column="38" />
       <File FileName="src\EndingGameController.cs" Line="27" Column="48" />
       <File FileName="src\DeploymentController.cs" Line="70" Column="30" />
@@ -35,8 +39,11 @@
       <File FileName="src\UtilityFunctions.cs" Line="223" Column="3" />
       <File FileName="src\Rules.cs" Line="24" Column="97" />
       <File FileName="src\Model\Player.cs" Line="6" Column="22" />
+<<<<<<< HEAD
 >>>>>>> da12860... Timer Added
       <File FileName="battleships Status" />
+=======
+>>>>>>> fd214c5... Timer Added
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
