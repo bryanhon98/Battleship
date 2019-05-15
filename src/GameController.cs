@@ -21,7 +21,7 @@ using static HighScoreController;
 /// </summary>
 public static class GameController
 {
-
+	public static Timer _timer = SwinGame.CreateTimer ();
 	private static BattleShipsGame _theGame;
 	private static Player _human;
 
@@ -39,6 +39,40 @@ public static class GameController
 
 	private static bool _started = false;
 	private static AIOption _aiSetting;
+
+	public static Timer Timer {
+		get {
+			return _timer;
+		}
+	}
+
+	public static string TLeft ()
+	{
+		int _tLeft = 120000;
+		_tLeft -= (int)SwinGame.TimerTicks (Timer);
+		_tLeft /= 1000;
+
+		if (_tLeft < 0) {
+			_tLeft = 0;
+			SwitchState (GameState.EndingGame);
+		}
+
+		int _mins;
+		int _secs;
+
+		_mins = _tLeft / 60;
+		_secs = _tLeft - (_mins * 60);
+
+		string _timeLeft;
+
+		if (_secs < 10) {
+			_timeLeft = _mins + ":0" + _secs;
+		} else {
+			_timeLeft = _mins + ":" + _secs;
+		}
+
+		return _timeLeft;
+	}
 	/// <summary>
 	/// Returns the current state of the game, indicating which screen is
 	/// currently being used
@@ -100,8 +134,6 @@ public static class GameController
 		} else if (!IsStarted) {
 			_started = true;
 			stopWatch.Start ();
-
-
 		}
 
 		SwinGame.PlayMusic (GameResources.GameMusic ("Background2"));
@@ -370,22 +402,29 @@ public static class GameController
 
 		switch (CurrentState) {
 		case GameState.ViewingMainMenu:
+			SwinGame.StopTimer (Timer);
 			MenuController.DrawMainMenu ();
 			break;
 		case GameState.ViewingInstruction:
 			Rules.DrawInstruction ();
 			break;
 		case GameState.ViewingGameMenu:
+			SwinGame.StopTimer (Timer);
 			MenuController.DrawGameMenu ();
 			break;
 		case GameState.AlteringSettings:
+			SwinGame.StopTimer (Timer);
 			MenuController.DrawSettings ();
 			break;
 		case GameState.Deploying:
+			SwinGame.ResetTimer (Timer);
 			DeploymentController.DrawDeployment ();
 			MenuController.DrawMenuBackButton ();
 			break;
 		case GameState.Discovering:
+			if (SwinGame.TimerTicks (Timer) == 0) {
+				SwinGame.StartTimer (Timer);
+			}
 			DiscoveryController.DrawDiscovery ();
 			break;
 		case GameState.EndingGame:
@@ -395,9 +434,11 @@ public static class GameController
 			HighScoreController.DrawHighScores ();
 			break;
 		case GameState.AlteringOption:
+			SwinGame.StopTimer (Timer);
 			MenuController.DrawOption ();
 			break;
 		case GameState.ChangingMusic:
+			SwinGame.StopTimer (Timer);
 			MenuController.DrawMusicMenu ();
 			break;
 		/*case GameState.changebg:

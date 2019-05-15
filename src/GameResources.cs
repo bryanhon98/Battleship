@@ -35,13 +35,15 @@ public static class GameResources
 		NewFont ("Courier", "cour.ttf", 14);
 		NewFont ("CourierSmall", "cour.ttf", 8);
 		NewFont ("Menu", "ffaccess.ttf", 8);
+		NewFont ("Rules", "ffaccess.ttf", 17);
+		NewFont ("Timer", "ffaccess.ttf", 8);
 	}
 
 	private static void LoadImages ()
 	{
 		//Backgrounds
 		NewImage ("Menu", "main_page.jpg");
-		NewImage ("Discovery", "discover.jpg");
+		NewImage ("Discovery", "discover.jpeg");
 		NewImage ("Deploy", "deploy.jpg");
 
 		NewImage ("Instruction", "inst.jpg");

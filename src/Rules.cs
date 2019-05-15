@@ -20,7 +20,7 @@ public class Rules
 	{
 		const int INST_TOP = 80;
 		const int INST_HEADING = 40;
-		SwinGame.DrawText ("Basic gameplay of Battleship", Color.White, GameResources.GameFont ("Courier"), INST_LEFT, INST_HEADING);
+		SwinGame.DrawText ("Basic gameplay of Battleship", Color.White, GameResources.GameFont ("Rules"), INST_LEFT, INST_HEADING);
 		SwinGame.DrawText ("- Players take turns firing shots (by clicking on the tiles) to attack opponent's battleships.", Color.White, GameResources.GameFont ("Courier"), INST_LEFT, INST_TOP);
 		SwinGame.DrawText ("- On player's turn, click to fire on the tiles that player think opponent might placed their", Color.White, GameResources.GameFont ("Courier"), INST_LEFT, INST_TOP + 20);
 		SwinGame.DrawText ("  battleships at.", Color.White, GameResources.GameFont ("Courier"), INST_LEFT, INST_TOP + 35);
