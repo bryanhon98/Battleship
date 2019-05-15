@@ -209,3 +209,7 @@ C:\battleships\obj\x86\Debug-Mac\MyGame.csproj.CopyComplete
 C:\battleships\obj\x86\Debug-Mac\MyGame.exe
 C:\battleships\obj\x86\Debug-Mac\MyGame.pdb
 C:\battleships\bin\Debug\Resources\sounds\Battle.mp3
+C:\battleships\bin\Debug\Resources\images\b1.jpg
+C:\battleships\bin\Debug\Resources\images\b2.jpg
+C:\battleships\bin\Debug\Resources\images\b3.jpg
+C:\battleships\bin\Debug\Resources\images\inst.jpg

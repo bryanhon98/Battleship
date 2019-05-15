@@ -150,7 +150,8 @@ static class MenuController
 
 	public static void HandleMenuBackInput ()
 	{
-		HandleMenuInput (BACK_MENU, 0, 0);	}
+		HandleMenuInput (BACK_MENU, 0, 0);
+	}
 
 	/*public static void HandleBGMenuInput ()
 	{
@@ -237,7 +238,8 @@ static class MenuController
 
 	public static void DrawMenuBackButton ()
 	{
-		DrawButtons (BACK_MENU);	}
+		DrawButtons (BACK_MENU);
+	}
 
 	/// <summary>
 	/// Draws the settings menu to the screen.
@@ -511,7 +513,8 @@ static class MenuController
 	public static void PerformBackMenuAction (int button)
 	{
 
-		GameController.EndCurrentState ();	}
+		GameController.EndCurrentState ();
+	}
 
 	/*public static void PerformChangeBGAction (int button)
 	{
@@ -553,12 +556,7 @@ static class MenuController
 		case MUSIC_3:
 			SwinGame.PlayMusic (GameResources.GameMusic ("Background3"));
 			break;
-			//case TURN_OFF:
-			//	GameController.SetMusic ("Off");
-			//	break;
-			//case TURN_ON:
-			//	GameController.SetMusic ("Background");
-			//	break;
+			
 		}
 	}
 }

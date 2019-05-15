@@ -1,5 +1,6 @@
 10
 AAA100
+nn 99
 xx 90
 BBB90
 j  82
@@ -8,4 +9,3 @@ DDD70
 EEE60
 FFF50
 GGG40
-HHH30
