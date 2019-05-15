@@ -10,6 +10,10 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> parent of adcd675... timer update
       <File FileName="src\DiscoveryController.cs" Line="61" Column="31" />
       <File FileName="src\DeploymentController.cs" Line="13" Column="2" />
       <File FileName="src\EndingGameController.cs" Line="13" Column="15" />
@@ -32,6 +36,13 @@
       <File FileName="src\GameController.cs" Line="53" Column="18" />
 >>>>>>> ba6bb03... timer done
       <File FileName="src\DiscoveryController.cs" Line="80" Column="38" />
+<<<<<<< HEAD
+=======
+=======
+      <File FileName="src\GameController.cs" Line="1" Column="1" />
+      <File FileName="src\DiscoveryController.cs" Line="83" Column="1" />
+>>>>>>> 668d785... timer update
+>>>>>>> parent of adcd675... timer update
       <File FileName="src\EndingGameController.cs" Line="27" Column="48" />
       <File FileName="src\DeploymentController.cs" Line="70" Column="30" />
       <File FileName="src\GameLogic.cs" Line="29" Column="56" />
@@ -41,6 +52,10 @@
       <File FileName="src\GameState.cs" Line="64" Column="2" />
       <File FileName="src\HighScoreController.cs" Line="195" Column="28" />
       <File FileName="src\UtilityFunctions.cs" Line="223" Column="3" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> parent of adcd675... timer update
       <File FileName="src\Rules.cs" Line="24" Column="97" />
       <File FileName="src\Model\Player.cs" Line="6" Column="22" />
 <<<<<<< HEAD
@@ -50,6 +65,13 @@
 =======
 >>>>>>> fd214c5... Timer Added
 =======
+<<<<<<< HEAD
+=======
+=======
+      <File FileName="src\Rules.cs" Line="1" Column="1" />
+      <File FileName="src\Model\Player.cs" Line="1" Column="1" />
+>>>>>>> 668d785... timer update
+>>>>>>> parent of adcd675... timer update
       <File FileName="battleships Status" />
 >>>>>>> ba6bb03... timer done
     </Files>
