@@ -381,9 +381,9 @@ public static class GameController
 		case GameState.ChangingMusic:
 			MenuController.HandleMusicMenuInput ();
 			break;
-		/*case GameState.changebg:
-			MenuController.HandleBGMenuInput ();
-			break;*/
+			/*case GameState.changebg:
+				MenuController.HandleBGMenuInput ();
+				break;*/
 
 		}
 
@@ -441,9 +441,9 @@ public static class GameController
 			SwinGame.StopTimer (Timer);
 			MenuController.DrawMusicMenu ();
 			break;
-		/*case GameState.changebg:
-			MenuController.DrawBGOption ();
-			break;*/
+			/*case GameState.changebg:
+				MenuController.DrawBGOption ();
+				break;*/
 		}
 
 		UtilityFunctions.DrawAnimations ();
