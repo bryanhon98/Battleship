@@ -4,10 +4,13 @@ using NUnit.Framework;
 
 namespace MyGame
 {
+	[TestFixture]
 	public class Unit_Testing
 	{
-		public Unit_Testing ()
+		[Test]
+		public void TestSeaGrid()
 		{
+			
 		}
 	}
 }
