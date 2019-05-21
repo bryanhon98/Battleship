@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('packages\NUnit.3.12.0\build\NUnit.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug-Windows</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -119,6 +120,9 @@
     <Compile Include="src\Model\Tile.cs" />
     <Compile Include="src\Model\TileView.cs" />
     <Compile Include="src\Rules.cs" />
+    <Compile Include="Unit Testing.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SwinGame">
@@ -127,6 +131,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="nunit.framework">
+      <HintPath>packages\NUnit.3.12.0\lib\net40\nunit.framework.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\animations\startup.txt">
@@ -410,6 +417,7 @@
     <None Include="Resources\images\discover.jpeg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\sounds\Battle.mp3">

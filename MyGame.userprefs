@@ -7,11 +7,11 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workbench ActiveDocument="battleships Status">
     <Files>
-      <File FileName="src\GameController.cs" Line="79" Column="3" />
+      <File FileName="src\GameController.cs" Line="273" Column="33" />
       <File FileName="src\DiscoveryController.cs" Line="26" Column="46" />
       <File FileName="src\EndingGameController.cs" Line="64" Column="4" />
       <File FileName="src\DeploymentController.cs" Line="13" Column="2" />
-      <File FileName="src\GameLogic.cs" Line="28" Column="3" />
+      <File FileName="src\GameLogic.cs" Line="1" Column="1" />
       <File FileName="src\GameMain.cs" Line="22" Column="44" />
       <File FileName="src\GameResources.cs" Line="227" Column="3" />
       <File FileName="src\MenuController.cs" Line="543" Column="5" />
@@ -20,6 +20,14 @@
       <File FileName="src\UtilityFunctions.cs" Line="238" Column="10" />
       <File FileName="src\Rules.cs" Line="42" Column="38" />
       <File FileName="src\Model\AIPlayer.cs" Line="150" Column="1" />
+      <File FileName="src\Model\SeaGrid.cs" Line="37" Column="20" />
+      <File FileName="src\Model\Tile.cs" Line="16" Column="28" />
+      <File FileName="src\Model\TileView.cs" Line="9" Column="36" />
+      <File FileName="src\Model\SeaGridAdapter.cs" Line="8" Column="14" />
+      <File FileName="src\Model\ISeaGrid.cs" Line="11" Column="15" />
+      <File FileName="src\Model\Ship.cs" Line="1" Column="1" />
+      <File FileName="Unit Testing.cs" Line="14" Column="1" />
+      <File FileName="packages.config" Line="1" Column="1" />
       <File FileName="battleships Status" />
     </Files>
   </MonoDevelop.Ide.Workbench>
