@@ -1089,3 +1089,14 @@ C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\nunit.framew
 C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\nunit.framework.pdb
 C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\nunit.framework.xml
 C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\obj\x86\Debug-Windows\MyGame.csprojResolveAssemblyReference.cache
+C:\battleships\bin\Debug\Unit Testing.cs
+C:\battleships\bin\Debug\mscorlib.dll
+C:\battleships\bin\Debug\nunit.framework.dll
+C:\battleships\bin\Debug\nunit.framework.pdb
+C:\battleships\bin\Debug\nunit.framework.xml
+C:\battleships\bin\Debug\normidna.nlp
+C:\battleships\bin\Debug\normnfc.nlp
+C:\battleships\bin\Debug\normnfd.nlp
+C:\battleships\bin\Debug\normnfkc.nlp
+C:\battleships\bin\Debug\normnfkd.nlp
+C:\battleships\obj\x86\Debug-Windows\MyGame.csprojResolveAssemblyReference.cache

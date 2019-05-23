@@ -19,13 +19,13 @@
       <File FileName="src\UtilityFunctions.cs" Line="185" Column="33" />
       <File FileName="src\Rules.cs" Line="42" Column="38" />
       <File FileName="src\Model\AIPlayer.cs" Line="150" Column="1" />
-      <File FileName="src\Model\SeaGrid.cs" Line="129" Column="31" />
+      <File FileName="src\Model\SeaGrid.cs" Line="126" Column="5" />
       <File FileName="src\Model\Tile.cs" Line="16" Column="28" />
       <File FileName="src\Model\TileView.cs" Line="9" Column="36" />
       <File FileName="src\Model\SeaGridAdapter.cs" Line="8" Column="14" />
       <File FileName="src\Model\ISeaGrid.cs" Line="11" Column="15" />
-      <File FileName="src\Model\Ship.cs" Line="36" Column="4" />
-      <File FileName="Unit Testing.cs" Line="26" Column="1" />
+      <File FileName="src\Model\Ship.cs" Line="22" Column="19" />
+      <File FileName="Unit Testing.cs" Line="55" Column="42" />
       <File FileName="src\Model\ShipName.cs" Line="16" Column="16" />
       <File FileName="src\Model\Player.cs" Line="55" Column="14" />
       <File FileName="battleships Status" />
@@ -33,11 +33,7 @@
     <Pads>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
         <State name="__root__">
-          <Node name="MyGame" expanded="True">
-            <Node name="MyGame" expanded="True">
-              <Node name="MyGame" expanded="True" />
-            </Node>
-          </Node>
+          <Node name="MyGame" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
