@@ -874,7 +874,6 @@ C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Resources\im
 C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Resources\images\deploy_dir_button_vert.png
 C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Resources\images\deploy_play_button.png
 C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Resources\images\deploy_randomize_button.png
-C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Resources\images\discover.jpg
 C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Resources\images\explosion.png
 C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Resources\images\loader_empty.png
 C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Resources\images\loader_full.png
@@ -1084,3 +1083,9 @@ E:\battleships\bin\Debug\MyGame.exe
 E:\battleships\bin\Debug\SwinGame.dll
 E:\battleships\obj\x86\Debug-Windows\MyGame.exe
 C:\battleships\bin\Debug\Resources\images\discover.jpeg
+C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Unit Testing.cs
+C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\Resources\images\discover.jpeg
+C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\nunit.framework.dll
+C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\nunit.framework.pdb
+C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\bin\Debug\nunit.framework.xml
+C:\Users\bhsc1\OneDrive\Desktop\DP1\Git Clone\battleships\obj\x86\Debug-Windows\MyGame.csprojResolveAssemblyReference.cache

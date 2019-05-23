@@ -4,13 +4,22 @@ using NUnit.Framework;
 
 namespace MyGame
 {
-	[TestFixture]
+	[TestFixture ()]
 	public class Unit_Testing
 	{
-		[Test]
-		public void TestSeaGrid()
+		[Test ()]
+		public void TestSelectedBS ()
 		{
-			
+			ShipName selectedBS = ShipName.Tug;
+			ShipName select = default (ShipName);
+
+			if (select == ShipName.None) {
+				selectedBS = select;
+			}
+
+			Assert.AreEqual (select, selectedBS);
 		}
 	}
 }
+
+
